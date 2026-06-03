@@ -1247,9 +1247,397 @@
       .tl-item-right .tl-card::after { display: none !important; }
       .tl-spacer { display: none; }
     }
+
+    /* ============================================================
+       GRUPO JOPER — BRAND ENTRY SELECTOR
+       Both halves are perfectly equal in size, weight, and hierarchy.
+    ============================================================ */
+
+    #joper-entry {
+      position: fixed;
+      inset: 0;
+      z-index: 9999;
+      display: flex;
+      flex-direction: row;
+      overflow: hidden;
+      font-family: 'Montserrat', sans-serif;
+    }
+
+    /* ── HALVES ── */
+    .je-half {
+      flex: 1;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      border: none;
+      outline: none;
+      padding: 0;
+      overflow: hidden;
+      transition: flex 0.55s cubic-bezier(0.4, 0, 0.2, 1);
+      text-align: center;
+    }
+    .je-half:hover { flex: 1.08; }
+    .je-half:focus-visible {
+      outline: 3px solid rgba(255,255,255,0.5);
+      outline-offset: -6px;
+    }
+
+    /* ── BACKGROUNDS ── */
+    .je-bg { position: absolute; inset: 0; pointer-events: none; }
+    .je-ligero .je-bg { background: linear-gradient(150deg, #0C0C1A 0%, #1A1A2E 60%, #12122A 100%); }
+    .je-movil  .je-bg { background: linear-gradient(210deg, #080E1A 0%, #0D1B2A 60%, #091525 100%); }
+
+    .je-grid {
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
+      background-size: 56px 56px;
+    }
+    .je-glow {
+      position: absolute;
+      width: 70%; height: 70%;
+      top: 15%; left: 15%;
+      border-radius: 50%;
+      filter: blur(80px);
+      opacity: 0;
+      transition: opacity 0.55s ease;
+    }
+    .je-half:hover .je-glow { opacity: 1; }
+    .je-glow-orange { background: radial-gradient(circle, rgba(232,93,4,0.22) 0%, transparent 70%); }
+    .je-glow-blue   { background: radial-gradient(circle, rgba(59,130,246,0.22) 0%, transparent 70%); }
+
+    /* ── BODY CONTENT ── */
+    .je-body {
+      position: relative;
+      z-index: 2;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 22px;
+      padding: 48px 40px;
+      max-width: 380px;
+      width: 100%;
+    }
+
+    /* ── LOGO / BRAND ── */
+    .je-brand { display: flex; flex-direction: column; align-items: center; }
+    .je-logo {
+      height: 72px;
+      width: auto;
+      max-width: 220px;
+      object-fit: contain;
+      filter: brightness(0) invert(1);
+      transition: transform 0.3s ease;
+    }
+    .je-half:hover .je-logo { transform: scale(1.05); }
+    .je-logo-fallback {
+      display: none;
+      flex-direction: column;
+      align-items: center;
+      gap: 4px;
+    }
+    .je-name {
+      font-weight: 900;
+      font-size: clamp(2.4rem, 5vw, 3.2rem);
+      color: #FFFFFF;
+      letter-spacing: -0.03em;
+      line-height: 1;
+    }
+    .je-division {
+      font-weight: 700;
+      font-size: clamp(0.8rem, 1.5vw, 1rem);
+      letter-spacing: 0.4em;
+      text-transform: uppercase;
+      line-height: 1;
+    }
+    .je-division-orange { color: #E85D04; }
+    .je-division-blue   { color: #60A5FA; }
+
+    /* ── DESCRIPTOR ── */
+    .je-descriptor {
+      font-size: 0.82rem;
+      font-weight: 500;
+      color: rgba(255,255,255,0.45);
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      margin: 0;
+    }
+
+    /* ── TAGS / PILLS ── */
+    .je-tags {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 8px;
+    }
+    .je-tags span {
+      font-size: 0.72rem;
+      font-weight: 600;
+      color: rgba(255,255,255,0.65);
+      background: rgba(232,93,4,0.1);
+      border: 1px solid rgba(232,93,4,0.2);
+      padding: 5px 12px;
+      border-radius: 100px;
+      transition: background 0.25s, color 0.25s, border-color 0.25s;
+    }
+    .je-half:hover .je-tags span {
+      background: rgba(232,93,4,0.18);
+      border-color: rgba(232,93,4,0.4);
+      color: rgba(255,255,255,0.9);
+    }
+    .je-tags-blue span {
+      background: rgba(59,130,246,0.1);
+      border-color: rgba(59,130,246,0.2);
+    }
+    .je-half:hover .je-tags-blue span {
+      background: rgba(59,130,246,0.18);
+      border-color: rgba(59,130,246,0.4);
+    }
+
+    /* ── CTA BUTTON ── */
+    .je-enter {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: 700;
+      font-size: 0.88rem;
+      color: #FFFFFF;
+      background: #E85D04;
+      padding: 14px 30px;
+      border-radius: 8px;
+      transition: background 0.25s, transform 0.25s, box-shadow 0.25s;
+      pointer-events: none;
+    }
+    .je-half:hover .je-enter {
+      background: #C44D00;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 28px rgba(232,93,4,0.45);
+    }
+    .je-enter-blue { background: #3B82F6; }
+    .je-half:hover .je-enter-blue {
+      background: #2563EB;
+      box-shadow: 0 8px 28px rgba(59,130,246,0.45);
+    }
+
+    /* ── CENTER DIVIDER: GRUPO JOPER ── */
+    .je-center {
+      position: absolute;
+      left: 50%;
+      top: 0; bottom: 0;
+      transform: translateX(-50%);
+      z-index: 10;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      pointer-events: none;
+      width: 1px;
+    }
+    .je-center-line {
+      width: 1px;
+      flex: 1;
+    }
+    .je-center-line-top    { background: linear-gradient(to bottom, transparent 0%, rgba(255,255,255,0.15) 100%); }
+    .je-center-line-bottom { background: linear-gradient(to top,   transparent 0%, rgba(255,255,255,0.15) 100%); }
+
+    .je-center-pill {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 4px;
+      background: rgba(8,8,20,0.9);
+      backdrop-filter: blur(16px);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 14px;
+      padding: 14px 18px;
+      width: 100px;
+    }
+    .je-center-logo {
+      height: 38px;
+      width: auto;
+      object-fit: contain;
+      filter: brightness(0) invert(1);
+    }
+    .je-center-name {
+      display: block;
+      font-weight: 900;
+      font-size: 0.6rem;
+      color: #FFFFFF;
+      letter-spacing: 0.12em;
+      line-height: 1.3;
+      text-align: center;
+    }
+    .je-center-est {
+      font-weight: 600;
+      font-size: 0.55rem;
+      color: #E85D04;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+    }
+
+    /* ── SKIP LINK ── */
+    #je-skip {
+      position: absolute;
+      bottom: 24px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 11;
+      background: none;
+      border: none;
+      cursor: pointer;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 600;
+      font-size: 0.75rem;
+      color: rgba(255,255,255,0.3);
+      letter-spacing: 0.08em;
+      transition: color 0.2s;
+      white-space: nowrap;
+    }
+    #je-skip:hover { color: rgba(255,255,255,0.7); }
+
+    /* ── EXIT ANIMATION ── */
+    #joper-entry.je-exit {
+      animation: jeExit 0.4s cubic-bezier(0.4, 0, 1, 1) forwards;
+    }
+    @keyframes jeExit {
+      0%   { opacity: 1; transform: scale(1); }
+      100% { opacity: 0; transform: scale(1.03); pointer-events: none; }
+    }
+
+    /* ── MOBILE: Stack vertically ── */
+    @media (max-width: 640px) {
+      #joper-entry { flex-direction: column; }
+      .je-half { flex: 1; }
+      .je-half:hover { flex: 1.06; }
+      .je-body { padding: 32px 24px; gap: 16px; max-width: 100%; }
+      .je-logo { height: 54px; }
+      .je-name { font-size: 2rem; }
+      .je-enter { padding: 12px 24px; font-size: 0.82rem; }
+      .je-center {
+        top: 50%;
+        left: 0; right: 0;
+        width: 100%;
+        height: 1px;
+        transform: translateY(-50%);
+        flex-direction: row;
+      }
+      .je-center-line { height: 1px; width: auto; flex: 1; background: rgba(255,255,255,0.12); }
+      .je-center-pill { flex-direction: row; gap: 8px; padding: 10px 16px; width: auto; border-radius: 100px; }
+      .je-center-logo { height: 22px; }
+      .je-center-name { font-size: 0.55rem; }
+      .je-center-est { display: none; }
+      #je-skip { bottom: 12px; font-size: 0.7rem; }
+    }
   </style>
 </head>
 <body>
+
+<!-- ================================================================
+     GRUPO JOPER — BRAND ENTRY SELECTOR
+     CEO requirement: users choose their brand on arrival.
+     Both brands are equal divisions of Grupo Joper.
+================================================================ -->
+<div id="joper-entry" role="dialog" aria-modal="true"
+     aria-label="Bienvenido a Grupo Joper — Elige tu división">
+
+  <!-- ── LEFT: JOPER LIGERO ── -->
+  <button class="je-half je-ligero" id="je-btn-ligero"
+          aria-label="Entrar a Joper Ligero — Maquinaria para construcción"
+          data-dest="#productos">
+    <div class="je-bg" aria-hidden="true">
+      <div class="je-grid" aria-hidden="true"></div>
+      <div class="je-glow je-glow-orange" aria-hidden="true"></div>
+    </div>
+    <div class="je-body">
+      <div class="je-brand">
+        <img src="./joper_ligero_logo.webp" alt="Joper Ligero" class="je-logo"
+          onerror="this.style.display='none';
+                   document.getElementById('je-ligero-fallback').style.display='flex';" />
+        <div class="je-logo-fallback" id="je-ligero-fallback">
+          <span class="je-name">JOPER</span>
+          <span class="je-division je-division-orange">LIGERO</span>
+        </div>
+      </div>
+      <p class="je-descriptor">Maquinaria para construcción</p>
+      <div class="je-tags" aria-label="Líneas de producto">
+        <span>Revolvedoras</span>
+        <span>Compactación</span>
+        <span>Generadores</span>
+        <span>Cortadoras</span>
+        <span>Torres de Iluminación</span>
+      </div>
+      <div class="je-enter" aria-hidden="true">
+        <span>Ver productos</span>
+        <svg width="18" height="18" fill="none" stroke="currentColor"
+             stroke-width="2.5" viewBox="0 0 24 24">
+          <path d="M5 12h14M12 5l7 7-7 7"/>
+        </svg>
+      </div>
+    </div>
+  </button>
+
+  <!-- ── CENTER DIVIDER: GRUPO JOPER ── -->
+  <div class="je-center" aria-hidden="true">
+    <div class="je-center-line je-center-line-top"></div>
+    <div class="je-center-pill">
+      <img src="./grupo_joper_logo.png" alt="" class="je-center-logo"
+        onerror="this.style.display='none';
+                 document.getElementById('je-center-fallback').style.display='block';" />
+      <div id="je-center-fallback" style="display:none;">
+        <span class="je-center-name">GRUPO</span>
+        <span class="je-center-name">JOPER</span>
+      </div>
+      <span class="je-center-est">Est. 1960</span>
+    </div>
+    <div class="je-center-line je-center-line-bottom"></div>
+  </div>
+
+  <!-- ── RIGHT: JOPER MÓVIL ── -->
+  <button class="je-half je-movil" id="je-btn-movil"
+          aria-label="Entrar a Joper Móvil — Soluciones de transporte"
+          data-dest="#movil">
+    <div class="je-bg" aria-hidden="true">
+      <div class="je-grid" aria-hidden="true"></div>
+      <div class="je-glow je-glow-blue" aria-hidden="true"></div>
+    </div>
+    <div class="je-body">
+      <div class="je-brand">
+        <img src="./joper_movil_logo.png" alt="Joper Móvil" class="je-logo"
+          onerror="this.style.display='none';
+                   document.getElementById('je-movil-fallback').style.display='flex';" />
+        <div class="je-logo-fallback" id="je-movil-fallback">
+          <span class="je-name">JOPER</span>
+          <span class="je-division je-division-blue">MÓVIL</span>
+        </div>
+      </div>
+      <p class="je-descriptor">Soluciones de transporte</p>
+      <div class="je-tags je-tags-blue" aria-label="Servicios disponibles">
+        <span>Transporte de carga</span>
+        <span>Flota especializada</span>
+        <span>Logística de obra</span>
+        <span>Cobertura nacional</span>
+      </div>
+      <div class="je-enter je-enter-blue" aria-hidden="true">
+        <span>Ver soluciones</span>
+        <svg width="18" height="18" fill="none" stroke="currentColor"
+             stroke-width="2.5" viewBox="0 0 24 24">
+          <path d="M5 12h14M12 5l7 7-7 7"/>
+        </svg>
+      </div>
+    </div>
+  </button>
+
+  <!-- ── SKIP ── -->
+  <button id="je-skip" aria-label="Ver sitio completo de Grupo Joper">
+    Ver sitio completo ↓
+  </button>
+
+</div>
+<!-- END BRAND ENTRY SELECTOR -->
 
 <!-- ===== NAVBAR ===== -->
 <nav id="navbar" role="navigation" aria-label="Navegación principal">
@@ -2157,6 +2545,50 @@
   });
 </script>
 
+
+<script>
+/* ============================================================
+   GRUPO JOPER — BRAND ENTRY SELECTOR
+============================================================ */
+(function () {
+  'use strict';
+
+  var overlay   = document.getElementById('joper-entry');
+  var btnLigero = document.getElementById('je-btn-ligero');
+  var btnMovil  = document.getElementById('je-btn-movil');
+  var btnSkip   = document.getElementById('je-skip');
+
+  if (!overlay) return;
+
+  /* Lock body scroll while selector is visible */
+  document.body.style.overflow = 'hidden';
+
+  function enter(destSelector) {
+    overlay.classList.add('je-exit');
+    setTimeout(function () {
+      overlay.style.display = 'none';
+      document.body.style.overflow = '';
+      if (destSelector) {
+        var target = document.querySelector(destSelector);
+        if (target) {
+          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      }
+    }, 400);
+  }
+
+  btnLigero.addEventListener('click', function () { enter(this.dataset.dest); });
+  btnMovil.addEventListener('click',  function () { enter(this.dataset.dest); });
+  btnSkip.addEventListener('click',   function () { enter(null); });
+
+  /* Keyboard: ESC = skip */
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape' && overlay.style.display !== 'none') {
+      enter(null);
+    }
+  });
+}());
+</script>
 </body>
 </html>
 <!--
