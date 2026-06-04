@@ -443,6 +443,8 @@
     .product-cta svg { transition: var(--transition); }
     .product-cta:hover { color: var(--orange-dark); }
     .product-cta:hover svg { transform: translateX(4px); }
+    /* Photo placeholder slot — hidden until real photos are added */
+    .product-img-slot { display: none; }
 
     /* ===== SPOTLIGHT ===== */
     #spotlight {
@@ -1937,6 +1939,72 @@
       font-style: italic;
     }
 
+    /* ===== MÓVIL PRODUCTS GRID ===== */
+    .movil-products-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 16px;
+      margin: 32px 0;
+    }
+    .movil-prod-card {
+      display: flex;
+      gap: 14px;
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 10px;
+      padding: 18px 20px;
+      transition: all 0.3s ease;
+    }
+    .movil-prod-card:hover {
+      background: rgba(255,255,255,0.09);
+      border-color: rgba(59,130,246,0.3);
+      transform: translateY(-2px);
+    }
+    .movil-prod-icon { font-size: 1.6rem; flex-shrink: 0; margin-top: 2px; }
+    .movil-prod-info h4 {
+      font-family: var(--font-head);
+      font-weight: 700;
+      font-size: 0.92rem;
+      color: #FFFFFF;
+      margin-bottom: 6px;
+    }
+    .movil-prod-info p {
+      font-size: 0.8rem;
+      color: rgba(255,255,255,0.55);
+      line-height: 1.6;
+      margin-bottom: 8px;
+    }
+    .movil-prod-tag {
+      font-family: var(--font-head);
+      font-weight: 700;
+      font-size: 0.65rem;
+      color: #60A5FA;
+      text-transform: uppercase;
+      letter-spacing: 0.07em;
+    }
+    .movil-certs {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      justify-content: center;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.07);
+      border-radius: 10px;
+      padding: 20px 24px;
+      margin-top: 8px;
+      margin-bottom: 32px;
+    }
+    .movil-cert-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-family: var(--font-head);
+      font-weight: 600;
+      font-size: 0.78rem;
+      color: rgba(255,255,255,0.6);
+    }
+    .movil-cert-icon { font-size: 1rem; }
+
     /* Universidad responsive */
     @media (max-width: 768px) {
       .univ-tabs { top: 60px; }
@@ -2048,7 +2116,7 @@
         </div>
       </div>
       <p class="je-descriptor">Soluciones de transporte</p>
-      <p class="je-hint">Volteos, góndolas, plataformas y flota especializada para logística y transporte de carga</p>
+      <p class="je-hint">Volteos, góndolas, tolvas, plataformas, pipas, graneleras y más soluciones de transporte y carga pesada</p>
       <div class="je-tags je-tags-blue" aria-label="Servicios disponibles">
         <span>Transporte de carga</span>
         <span>Flota especializada</span>
@@ -2088,6 +2156,7 @@
         <li><a href="#inicio">Inicio</a></li>
         <li><a href="#productos">Productos</a></li>
         <li><a href="#movil">Joper Móvil</a></li>
+        <li><a href="#montacargas-section">Montacargas</a></li>
         <li><a href="#historia">Nosotros</a></li>
         <li><a href="#distribuidores">Distribuidores</a></li>
         <li><a href="#universidad">Universidad</a></li>
@@ -2112,6 +2181,7 @@
   <a href="#inicio" class="mobile-link">Inicio</a>
   <a href="#productos" class="mobile-link">Productos</a>
   <a href="#movil" class="mobile-link">Joper Móvil</a>
+  <a href="#montacargas-section" class="mobile-link">Montacargas</a>
   <a href="#historia" class="mobile-link">Nosotros</a>
   <a href="#distribuidores" class="mobile-link">Distribuidores</a>
   <a href="#universidad" class="mobile-link">Universidad Joper</a>
@@ -2210,15 +2280,18 @@
       <button class="filter-btn" data-filter="compactacion">Compactación</button>
       <button class="filter-btn" data-filter="energia">Energía</button>
       <button class="filter-btn" data-filter="corte">Corte y Acabado</button>
+      <button class="filter-btn" data-filter="montacargas">Montacargas y Elevación</button>
     </div>
     <div class="products-grid" role="list" aria-label="Categorías de productos">
 
+      <!-- REVOLVEDORAS -->
       <article class="product-card fade-in" role="listitem" data-category="mezcla">
+        <div class="product-img-slot" data-product="revolvedoras"></div>
         <div class="product-icon" aria-hidden="true">🔄</div>
         <div>
           <h3 class="product-name">Revolvedoras</h3>
-          <p class="product-desc">Mezcladoras de concreto de alto rendimiento para obra. Diseño robusto con chasis reforzado y múltiples opciones de motor.</p>
-          <p class="product-models">ULTRAMAX100 · RM10 · R100LX · R100TB · MaxMix 110v</p>
+          <p class="product-desc">Mezcladoras de concreto de alto rendimiento. Chasis reforzado en "V", cremallera de una sola pieza, multi-posicionamiento de descarga. Producción: 5 m³/hr con ciclo de 3 min.</p>
+          <p class="product-models">ULTRAMAX100 · R100TB · R100STLX · R200STLX · POLYMAX · MAXMIX CM150</p>
         </div>
         <a href="#contacto" class="product-cta" aria-label="Ver productos Revolvedoras">
           Ver productos
@@ -2226,51 +2299,14 @@
         </a>
       </article>
 
-      <article class="product-card fade-in" role="listitem" data-category="corte">
-        <div class="product-icon" aria-hidden="true">🏗️</div>
-        <div>
-          <h3 class="product-name">Superficie</h3>
-          <p class="product-desc">Allanadoras de concreto para acabados de pisos en obra. Resultados profesionales de alta precisión.</p>
-          <p class="product-models">Modelo: AL-40</p>
-        </div>
-        <a href="#contacto" class="product-cta" aria-label="Ver productos Superficie">
-          Ver productos
-          <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-        </a>
-      </article>
-
-      <article class="product-card fade-in" role="listitem" data-category="corte">
-        <div class="product-icon" aria-hidden="true">⚡</div>
-        <div>
-          <h3 class="product-name">Cortadoras</h3>
-          <p class="product-desc">Cortadoras de piso para concreto y asfalto. Cortes precisos y limpios en superficies de alta resistencia.</p>
-          <p class="product-models">Modelos para concreto y asfalto</p>
-        </div>
-        <a href="#contacto" class="product-cta" aria-label="Ver productos Cortadoras">
-          Ver productos
-          <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-        </a>
-      </article>
-
+      <!-- COMPACTACIÓN -->
       <article class="product-card fade-in" role="listitem" data-category="compactacion">
-        <div class="product-icon" aria-hidden="true">🔧</div>
-        <div>
-          <h3 class="product-name">Elevación</h3>
-          <p class="product-desc">Malacates para obra. Carga vertical eficiente de materiales en construcción vertical y de altura.</p>
-          <p class="product-models">Línea Malacates Joper</p>
-        </div>
-        <a href="#contacto" class="product-cta" aria-label="Ver productos Elevación">
-          Ver productos
-          <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-        </a>
-      </article>
-
-      <article class="product-card fade-in" role="listitem" data-category="compactacion">
-        <div class="product-icon" aria-hidden="true">💪</div>
+        <div class="product-img-slot" data-product="compactacion"></div>
+        <div class="product-icon" aria-hidden="true">⚙️</div>
         <div>
           <h3 class="product-name">Compactación</h3>
-          <p class="product-desc">Apisonadoras y placas vibratorias para compactación de suelos. Alta fuerza centrífuga y desempeño confiable.</p>
-          <p class="product-models">JAGUAR RAM-75 · Placas Vibratorias</p>
+          <p class="product-desc">Apisonadoras y placas compactadoras para todo tipo de suelo. JAGUAR MT75J: 600–650 golpes/min, fuerza 18 kN. Placas hasta 660 m²/hr de eficiencia. Rodillo vibratorio RV-4 de 100 kg.</p>
+          <p class="product-models">JAGUAR MT75J · AP800 · MS60K6.5 · MS90K6.5 · Rodillo RV-4</p>
         </div>
         <a href="#contacto" class="product-cta" aria-label="Ver productos Compactación">
           Ver productos
@@ -2278,12 +2314,59 @@
         </a>
       </article>
 
+      <!-- SUPERFICIE -->
+      <article class="product-card fade-in" role="listitem" data-category="corte">
+        <div class="product-img-slot" data-product="superficie"></div>
+        <div class="product-icon" aria-hidden="true">🏗️</div>
+        <div>
+          <h3 class="product-name">Superficie</h3>
+          <p class="product-desc">Allanadoras y unireglas para acabados de pisos de concreto. AL-40 (40" diámetro, 50–100 RPM), AL-46 (117 cm diámetro, 5 aspas), Escarificadora E-800 para eliminación de líneas de tráfico.</p>
+          <p class="product-models">AL-40 · AL-46 · Uniregla · Escarificadora E-800</p>
+        </div>
+        <a href="#contacto" class="product-cta" aria-label="Ver productos Superficie">
+          Ver productos
+          <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+      </article>
+
+      <!-- CORTADORAS -->
+      <article class="product-card fade-in" role="listitem" data-category="corte">
+        <div class="product-img-slot" data-product="cortadoras"></div>
+        <div class="product-icon" aria-hidden="true">⚡</div>
+        <div>
+          <h3 class="product-name">Cortadoras</h3>
+          <p class="product-desc">Cortadoras de concreto y asfalto con disco hasta 18". Guía de precisión, freno manual, sistema de enfriamiento y tanque de agua incluido. Sierra BBS para block y ladrillo hasta 8" de profundidad.</p>
+          <p class="product-models">Mod. KL · Super · Super Plus · CA13 · Sierra BBS eléctrica/gasolina</p>
+        </div>
+        <a href="#contacto" class="product-cta" aria-label="Ver productos Cortadoras">
+          Ver productos
+          <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+      </article>
+
+      <!-- ELEVACIÓN Y MALACATES -->
+      <article class="product-card fade-in" role="listitem" data-category="montacargas">
+        <div class="product-img-slot" data-product="elevacion"></div>
+        <div class="product-icon" aria-hidden="true">🏋️</div>
+        <div>
+          <h3 class="product-name">Elevación y Malacates</h3>
+          <p class="product-desc">Malacate JP-1000: 1,000 kg de capacidad, 22–32 mts/min, cable de 13 mm (1/2"). Pluma giratoria con radio de 1.5 mts. Motor gasolina o eléctrico. Vogue, triángulo y polea patesca disponibles.</p>
+          <p class="product-models">Malacate JP-1000 · Pluma Giratoria JP-1000 · Vogue 160 Lts.</p>
+        </div>
+        <a href="#contacto" class="product-cta" aria-label="Ver productos Elevación">
+          Ver productos
+          <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+      </article>
+
+      <!-- VIBRACIÓN -->
       <article class="product-card fade-in" role="listitem" data-category="mezcla">
+        <div class="product-img-slot" data-product="vibracion"></div>
         <div class="product-icon" aria-hidden="true">〰️</div>
         <div>
           <h3 class="product-name">Vibración</h3>
-          <p class="product-desc">Vibradores pendulares para concreto. Consolidación homogénea para estructuras sin burbujas ni vacíos internos.</p>
-          <p class="product-models">Línea Vibradores Joper</p>
+          <p class="product-desc">Vibradores para consolidación homogénea del concreto. V3EM eléctrico: motor 3 HP, 110V, fuerza centrífuga 3,000 N, manguera 4 mts. Pendular V-4P/V-6P a gasolina con chicotes de 6 mts.</p>
+          <p class="product-models">Vibrador V3EM eléctrico · Pendular V-4P · Pendular V-6P</p>
         </div>
         <a href="#contacto" class="product-cta" aria-label="Ver productos Vibración">
           Ver productos
@@ -2291,27 +2374,61 @@
         </a>
       </article>
 
+      <!-- GENERADORES Y COMPRESORES -->
       <article class="product-card fade-in" role="listitem" data-category="energia">
+        <div class="product-img-slot" data-product="generadores"></div>
         <div class="product-icon" aria-hidden="true">⚡</div>
         <div>
-          <h3 class="product-name">Generación</h3>
-          <p class="product-desc">Generadores eléctricos para obra en campo. Energía confiable donde la red eléctrica no llega.</p>
-          <p class="product-models">Generadores Joper serie Campo</p>
+          <h3 class="product-name">Generadores y Compresores</h3>
+          <p class="product-desc">Compresor de aire JP185S: doble tornillo, 185 CFM, motor Isuzu 4JB1-C, consumo 9 L/h, tanque 80 L. Generadores eléctricos para obra en campo, múltiples potencias disponibles.</p>
+          <p class="product-models">Compresor JP185S 185 CFM · Generadores para obra</p>
         </div>
-        <a href="#contacto" class="product-cta" aria-label="Ver productos Generación">
+        <a href="#contacto" class="product-cta" aria-label="Ver productos Generadores">
           Ver productos
           <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
         </a>
       </article>
 
+      <!-- TORRES DE ILUMINACIÓN -->
       <article class="product-card fade-in" role="listitem" data-category="energia">
+        <div class="product-img-slot" data-product="torres-iluminacion"></div>
         <div class="product-icon" aria-hidden="true">💡</div>
         <div>
           <h3 class="product-name">Torres de Iluminación</h3>
-          <p class="product-desc">Torres para iluminación nocturna en obra. Alta potencia lumínica con mástil extensible y fácil movilidad.</p>
-          <p class="product-models">LD6KW · Torres Joper variantes</p>
+          <p class="product-desc">Torre LD7KW LED: hasta 8.5 metros de alto plegable, giro 360°, 4 lámparas LED de 320 W, área iluminada 5,000 m². Motor Kohler Lombardini diesel. Salidas auxiliares 3 kVA. Peso 706 kg.</p>
+          <p class="product-models">LD7KW LED · Modelos con y sin generador auxiliar</p>
         </div>
         <a href="#contacto" class="product-cta" aria-label="Ver productos Torres de Iluminación">
+          Ver productos
+          <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+      </article>
+
+      <!-- MONTACARGAS -->
+      <article class="product-card fade-in" role="listitem" data-category="montacargas">
+        <div class="product-img-slot" data-product="montacargas"></div>
+        <div class="product-icon" aria-hidden="true">🏭</div>
+        <div>
+          <h3 class="product-name">Montacargas</h3>
+          <p class="product-desc">Línea completa 3 a 5 Ton. JP30 (Nissan K25, GLP/Gasolina), JP30D (Isuzu C240 Diesel), CPQY50 (Kubota 5 Ton) y CPCD50 (Isuzu 5 Ton Diesel). Triple mástil 4.8 m, desplazador lateral, llanta semisólida.</p>
+          <p class="product-models">JP30 · JP30D · CPQY50 · CPCD50 · Motocarga M300</p>
+        </div>
+        <a href="#contacto" class="product-cta" aria-label="Ver productos Montacargas">
+          Ver productos
+          <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+      </article>
+
+      <!-- KRAFT TOOL -->
+      <article class="product-card fade-in" role="listitem" data-category="corte">
+        <div class="product-img-slot" data-product="kraft-tool"></div>
+        <div class="product-icon" aria-hidden="true">🛠️</div>
+        <div>
+          <h3 class="product-name">Kraft Tool — Acabado</h3>
+          <p class="product-desc">Flotas y llanas de magnesio, llanas ranuradas, comales, texturizadores, dispersadores de concreto y tubos de extensión. Motores Kohler, Robin, Honda, Briggs &amp; Stratton disponibles.</p>
+          <p class="product-models">Flotas CC802/CC803 · Llanas CC790/CC787 · Comales SK401–SK407</p>
+        </div>
+        <a href="#contacto" class="product-cta" aria-label="Ver productos Kraft Tool">
           Ver productos
           <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
         </a>
@@ -2354,42 +2471,42 @@
         </svg>
       </div>
       <div class="spotlight-text">
-        <span class="spotlight-badge">Producto Estrella</span>
+        <div class="spotlight-badge">Producto estrella · ULTRAMAX100</div>
         <h2 class="section-title" id="spotlight-heading" style="color:var(--white)">
           ULTRAMAX100<br />
           <span style="color:var(--orange)">La Revolvedora</span><br />
           más completa
         </h2>
-        <div class="specs-list" role="list" aria-label="Especificaciones técnicas ULTRAMAX100">
-          <div class="spec-item" role="listitem">
+        <p class="section-subtitle" style="color:rgba(255,255,255,0.6);">
+          La revolvedora más vendida de México. Fabricada en Gómez Palacio, Durango
+          desde 1960. Construida para resistir las condiciones de obra más exigentes.
+        </p>
+        <ul class="specs-list" aria-label="Especificaciones técnicas ULTRAMAX100">
+          <li class="spec-item">
             <div class="spec-dot" aria-hidden="true"></div>
-            <span class="spec-text"><strong>Chasis en "V" reforzado</strong> — estructura de alta rigidez para trabajo continuo</span>
-          </div>
-          <div class="spec-item" role="listitem">
+            <span class="spec-text"><strong>Capacidad:</strong> 1 saco · Olla 255 Lts · Chasis reforzado en "V"</span>
+          </li>
+          <li class="spec-item">
             <div class="spec-dot" aria-hidden="true"></div>
-            <span class="spec-text"><strong>Capacidad olla: 360 L / Mezcla: 256 L</strong></span>
-          </div>
-          <div class="spec-item" role="listitem">
+            <span class="spec-text"><strong>Motores compatibles:</strong> 5.5 HP hasta 9.5 HP</span>
+          </li>
+          <li class="spec-item">
             <div class="spec-dot" aria-hidden="true"></div>
-            <span class="spec-text"><strong>Producción: 5 m³/hr</strong> — ciclo de 3 minutos</span>
-          </div>
-          <div class="spec-item" role="listitem">
+            <span class="spec-text"><strong>Producción:</strong> 5 m³ de concreto por hora, ciclo de 3 minutos</span>
+          </li>
+          <li class="spec-item">
             <div class="spec-dot" aria-hidden="true"></div>
-            <span class="spec-text"><strong>Velocidad:</strong> 27–31 RPM</span>
-          </div>
-          <div class="spec-item" role="listitem">
+            <span class="spec-text"><strong>Velocidad de olla:</strong> 27 a 31 RPM · Yugo PTR 3"x3"</span>
+          </li>
+          <li class="spec-item">
             <div class="spec-dot" aria-hidden="true"></div>
-            <span class="spec-text"><strong>Llanta neumática RIN 13</strong> — movilidad en obra</span>
-          </div>
-          <div class="spec-item" role="listitem">
+            <span class="spec-text"><strong>Dimensiones:</strong> Alto 195 cm · Ancho 107 cm · Largo 175 cm · Peso 230 kg con motor</span>
+          </li>
+          <li class="spec-item">
             <div class="spec-dot" aria-hidden="true"></div>
-            <span class="spec-text"><strong>Compatible:</strong> motores 6.5 HP – 16 HP</span>
-          </div>
-          <div class="spec-item" role="listitem">
-            <div class="spec-dot" aria-hidden="true"></div>
-            <span class="spec-text"><strong>Cremallera de una sola pieza</strong> con multi-posicionamiento de descarga</span>
-          </div>
-        </div>
+            <span class="spec-text"><strong>Llanta:</strong> Rin 12 · Gabinete estándar · Diseño para alta durabilidad en obra</span>
+          </li>
+        </ul>
         <div style="display:flex;gap:12px;flex-wrap:wrap;">
           <a href="https://wa.me/528711512993?text=Hola%2C%20quiero%20informaci%C3%B3n%20sobre%20la%20ULTRAMAX100" class="btn btn-primary" target="_blank" rel="noopener" aria-label="Solicitar cotización ULTRAMAX100 por WhatsApp">
             Solicitar Cotización
@@ -2399,6 +2516,79 @@
           </a>
         </div>
       </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== MONTACARGAS ===== -->
+<section id="montacargas-section" aria-labelledby="montacargas-heading" style="padding:80px 0; background:#F8F8F8;">
+  <div class="container">
+    <div style="text-align:center; margin-bottom:48px;" class="fade-in">
+      <span class="section-tag">Línea Joper</span>
+      <h2 class="section-title" id="montacargas-heading">Montacargas <span>JP Series</span></h2>
+      <p class="section-subtitle" style="margin:12px auto 0;">
+        3 a 5 toneladas de capacidad. Adaptados para suelos y condiciones nacionales.
+        Triple mástil 4.8 m · Desplazador lateral · Transmisión hidráulica automática.
+      </p>
+    </div>
+    <div style="display:grid; grid-template-columns:repeat(auto-fill,minmax(260px,1fr)); gap:20px;">
+
+      <div class="product-card fade-in" data-category="montacargas">
+        <div class="product-img-slot" data-product="jp30"></div>
+        <div class="product-icon" aria-hidden="true">🏭</div>
+        <div>
+          <h3 class="product-name">JP30 — GLP / Gasolina</h3>
+          <p class="product-desc">Motor Nissan K25, combustión dual GLP/Gasolina IMPCO. 3 Ton de capacidad. Triple mástil 4.8 m. Sistema CURTIS. Desplazador lateral.</p>
+          <p class="product-models">JP-25 · JP-30 · Velocidad 19 km/h</p>
+        </div>
+        <a href="#contacto" class="product-cta" aria-label="Ver especificaciones JP30">
+          Ver especificaciones
+          <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+      </div>
+
+      <div class="product-card fade-in" data-category="montacargas">
+        <div class="product-img-slot" data-product="jp30d"></div>
+        <div class="product-icon" aria-hidden="true">🏭</div>
+        <div>
+          <h3 class="product-name">JP30D — Diesel</h3>
+          <p class="product-desc">Motor Isuzu C240 Diesel OKKAI. 3 Ton de capacidad. Baja emisión, inyección directa. Triple mástil 4.8 m. Ideal para exteriores y obra pesada.</p>
+          <p class="product-models">JP-30D · Diesel · Uso rudo exterior</p>
+        </div>
+        <a href="#contacto" class="product-cta" aria-label="Ver especificaciones JP30D">
+          Ver especificaciones
+          <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+      </div>
+
+      <div class="product-card fade-in" data-category="montacargas">
+        <div class="product-img-slot" data-product="cpqy50"></div>
+        <div class="product-icon" aria-hidden="true">🏋️</div>
+        <div>
+          <h3 class="product-name">CPQY50 — 5 Ton GLP</h3>
+          <p class="product-desc">Motor Kubota WG800, combustión dual GLP/Gasolina IMPCO. 5 Ton de capacidad. Ancho 1,430 mm. Peso 6,980 kg. Llanta semisólida.</p>
+          <p class="product-models">CPQY50 · 5,000 kg · Triple mástil 4.8 m</p>
+        </div>
+        <a href="#contacto" class="product-cta" aria-label="Ver especificaciones CPQY50">
+          Ver especificaciones
+          <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+      </div>
+
+      <div class="product-card fade-in" data-category="montacargas">
+        <div class="product-img-slot" data-product="motocarga"></div>
+        <div class="product-icon" aria-hidden="true">🛵</div>
+        <div>
+          <h3 class="product-name">Motocarga M300</h3>
+          <p class="product-desc">Capacidad 800 kg. Largo 220 cm · Ancho 130 cm. 5 velocidades + reversa. Radiador + disipador de aire. Transmisión posterior con corona y cardan. Garantía 6 meses o 10,000 km.</p>
+          <p class="product-models">M300 · 800 kg · Llanta 5.00-12</p>
+        </div>
+        <a href="#contacto" class="product-cta" aria-label="Ver especificaciones Motocarga M300">
+          Ver especificaciones
+          <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+      </div>
+
     </div>
   </div>
 </section>
@@ -2419,9 +2609,11 @@
           Transporte con <span class="movil-title-accent">calidad y seguridad</span>
         </h2>
         <p class="movil-desc">
-          La línea de transporte del Grupo Joper. Soluciones diseñadas para mover materiales,
-          equipos y personas en entornos de obra y construcción con la misma calidad y durabilidad
-          que caracteriza a la marca desde 1960.
+          Joper Móvil nace para satisfacer la creciente demanda de carrocerías en el continente
+          americano. Certificada ISO 9001:2008, forma parte de Grupo Joper compartiendo los
+          ideales de innovación y desarrollo continuo. Fabricamos con aceros de alta resistencia
+          HARDOX y STRENX — los más exigentes del mercado. Desde volteos hasta silos horizontales,
+          construimos lo que México mueve.
         </p>
         <div class="movil-features">
           <div class="movil-feature">
@@ -2441,6 +2633,104 @@
             <span class="movil-feature-text">Soporte técnico y refacciones disponibles</span>
           </div>
         </div>
+
+        <!-- PRODUCTOS JOPER MÓVIL -->
+        <div class="movil-products-grid" aria-label="Línea de productos Joper Móvil">
+
+          <div class="movil-prod-card">
+            <div class="movil-prod-icon">🚛</div>
+            <div class="movil-prod-info">
+              <h4>Volteos — Línea Pegaso</h4>
+              <p>Cajas de volteo desde 6 m³ hasta 20 m³ sobre chasis. Fabricadas en acero inoxidable, Hardox o acero al carbón. Minería, construcción, chatarra, agrícola.</p>
+              <span class="movil-prod-tag">Acero STRENX · HARDOX IN MY BODY</span>
+            </div>
+          </div>
+
+          <div class="movil-prod-card">
+            <div class="movil-prod-icon">🏗️</div>
+            <div class="movil-prod-info">
+              <h4>Góndolas</h4>
+              <p>Full de góndolas hasta 80 Ton. V-30 HARDOX desde 24 m³ hasta 60 m³. Aluminio, HARDOX, STRENX y acero al carbón. Minería, construcción, chatarra, agrícola.</p>
+              <span class="movil-prod-tag">Aluminio · HARDOX · STRENX</span>
+            </div>
+          </div>
+
+          <div class="movil-prod-card">
+            <div class="movil-prod-icon">🏭</div>
+            <div class="movil-prod-info">
+              <h4>Tolvas Cementeras</h4>
+              <p>Tolva presurizada con TARA desde 5,500 kg. 3 domos de 24" marca BETTS, válvulas BTI, 3 fluridificadores por cono de descarga. Acero STRENX.</p>
+              <span class="movil-prod-tag">Acero STRENX · ISO 9001</span>
+            </div>
+          </div>
+
+          <div class="movil-prod-card">
+            <div class="movil-prod-icon">📦</div>
+            <div class="movil-prod-info">
+              <h4>Línea Hércules — Plataformas</h4>
+              <p>Plataforma Multi-Modal para contenedores HC 40' y 20'. TARA desde 5.2 Ton. Portacontenedor, plataforma encortinada KINEDYNE, plataforma multi-propósitos.</p>
+              <span class="movil-prod-tag">Acero STRENX · Contenedores HC</span>
+            </div>
+          </div>
+
+          <div class="movil-prod-card">
+            <div class="movil-prod-icon">⛽</div>
+            <div class="movil-prod-info">
+              <h4>Pipas y Tanques</h4>
+              <p>Tanque de refinado 22,000–38,000 lts. Pipa de diesel 8,000–20,000 lts sobre camión. Especificación PEMEX. Pipa de riego Klein 10,000–20,000 lts con aspersores independientes.</p>
+              <span class="movil-prod-tag">Acero inoxidable · Especificación PEMEX</span>
+            </div>
+          </div>
+
+          <div class="movil-prod-card">
+            <div class="movil-prod-icon">🌾</div>
+            <div class="movil-prod-info">
+              <h4>Graneleras y Silos</h4>
+              <p>Graneleras desde 20 m³ hasta 80 m³. Silo horizontal capacidades de 117 m³ hasta 150 m³. Ideal para granos, forraje, silo. Diseño ligero y resistente.</p>
+              <span class="movil-prod-tag">Agroindustria · Alta capacidad</span>
+            </div>
+          </div>
+
+          <div class="movil-prod-card">
+            <div class="movil-prod-icon">🔧</div>
+            <div class="movil-prod-info">
+              <h4>Lube Truck — Línea Pegaso</h4>
+              <p>Configurados para apoyar la maquinaria pesada. Despachadores de combustibles, grasas y aceites, aire comprimido, generadores de luz, soldadoras y herramientas.</p>
+              <span class="movil-prod-tag">Servicio de campo · Maquinaria pesada</span>
+            </div>
+          </div>
+
+          <div class="movil-prod-card">
+            <div class="movil-prod-icon">🏗️</div>
+            <div class="movil-prod-info">
+              <h4>Grúa de Rescate y Plataformas</h4>
+              <p>Grúa de rescate, plataforma con brazo articulado HYVA, plataforma multi-propósitos. Sistema de enlonado CRAMARO con lona de 22 Oz. Activado desde cabina.</p>
+              <span class="movil-prod-tag">Línea Pegaso · CRAMARO</span>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- CERTIFICACIONES -->
+        <div class="movil-certs" aria-label="Certificaciones Joper Móvil">
+          <div class="movil-cert-item">
+            <span class="movil-cert-icon">✅</span>
+            <span>ISO 9001:2008 Certificada</span>
+          </div>
+          <div class="movil-cert-item">
+            <span class="movil-cert-icon">🔩</span>
+            <span>HARDOX IN MY BODY</span>
+          </div>
+          <div class="movil-cert-item">
+            <span class="movil-cert-icon">⚙️</span>
+            <span>Acero STRENX Performance Steel</span>
+          </div>
+          <div class="movil-cert-item">
+            <span class="movil-cert-icon">🏢</span>
+            <span>AENOR — Empresa Registrada</span>
+          </div>
+        </div>
+
         <div style="display:flex;gap:12px;flex-wrap:wrap;">
           <a href="https://wa.me/528711512993?text=Hola%2C%20me%20interesa%20Joper%20M%C3%B3vil" class="btn movil-btn" target="_blank" rel="noopener" aria-label="Contactar sobre Joper Móvil por WhatsApp">
             <svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
@@ -3212,13 +3502,15 @@
 
   // Product filter
   const filterBtns = document.querySelectorAll('.filter-btn');
-  const productCards = document.querySelectorAll('.product-card');
+  // Scope to #productos only — avoids affecting Montacargas section cards
+  const productCards = document.querySelectorAll('#productos .product-card');
 
   const categoryMap = {
     'mezcla': ['mezcla'],
     'compactacion': ['compactacion'],
     'energia': ['energia'],
     'corte': ['corte'],
+    'montacargas': ['montacargas'],
     'all': []
   };
 
