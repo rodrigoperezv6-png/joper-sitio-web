@@ -59,9 +59,53 @@
   <meta name="keywords" content="revolvedoras, maquinaria construcción, Joper, México, compactación, generadores, torres iluminación" />
   <meta property="og:title" content="Grupo Joper — Maquinaria Mexicana desde 1960" />
   <meta property="og:description" content="Fabricantes mexicanos de maquinaria para construcción y transporte desde 1960." />
-  <meta property="og:image" content="https://joper.com/og-image.jpg" />
+  <meta property="og:image" content="https://rodrigoperezv6-png.github.io/joper-sitio-web/grupo_joper_logo.png" />
   <meta property="og:type" content="website" />
   <link rel="canonical" href="https://joper.com" />
+  <meta name="robots" content="index, follow" />
+  <meta http-equiv="content-language" content="es-MX" />
+  <meta name="author" content="Grupo Joper" />
+  <meta name="geo.region" content="MX-DGO" />
+  <meta name="geo.placename" content="Gómez Palacio, Durango, México" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Grupo Joper",
+    "alternateName": ["Joper", "Joper Móvil", "Joper Ligero"],
+    "url": "https://joper.com",
+    "logo": "https://rodrigoperezv6-png.github.io/joper-sitio-web/grupo_joper_logo.png",
+    "foundingDate": "1960",
+    "description": "Fabricantes mexicanos de maquinaria para construcción y transporte desde 1960.",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Santiago Papasquiaro 150, Parque Industrial Lagunero",
+      "addressLocality": "Gómez Palacio",
+      "addressRegion": "Durango",
+      "postalCode": "35070",
+      "addressCountry": "MX"
+    },
+    "contactPoint": [
+      {
+        "@type": "ContactPoint",
+        "telephone": "+52-871-151-2993",
+        "contactType": "customer service",
+        "availableLanguage": "Spanish"
+      },
+      {
+        "@type": "ContactPoint",
+        "telephone": "+52-871-179-5810",
+        "contactType": "sales",
+        "availableLanguage": "Spanish",
+        "name": "Joper Móvil"
+      }
+    ],
+    "sameAs": [
+      "https://facebook.com/GrupoJoper",
+      "https://www.youtube.com/@GrupoJoper"
+    ]
+  }
+  </script>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800;900&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
@@ -2203,6 +2247,54 @@
     @media (max-width: 640px) {
       .je-welcome { display: none; }
     }
+
+    /* ── Improvement 5: Móvil tabs mobile grid ── */
+    @media (max-width: 768px) {
+      .movil-line-tabs {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 8px;
+      }
+      .movil-line-tab {
+        font-size: 0.75rem;
+        padding: 9px 10px;
+        text-align: center;
+        border-radius: 8px;
+        justify-content: center;
+      }
+    }
+
+    /* ── Improvement 2: Scroll-to-top button ── */
+    #scroll-top {
+      position: fixed;
+      bottom: 104px;
+      right: 28px;
+      z-index: 997;
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: rgba(26,26,46,0.92);
+      border: 1px solid rgba(255,255,255,0.15);
+      color: rgba(255,255,255,0.75);
+      cursor: pointer;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.1rem;
+      font-family: var(--font-head);
+      font-weight: 700;
+      transition: var(--transition);
+      backdrop-filter: blur(8px);
+      line-height: 1;
+    }
+    #scroll-top::before { content: '↑'; }
+    #scroll-top:hover {
+      background: var(--orange);
+      border-color: var(--orange);
+      color: #FFFFFF;
+      transform: translateY(-3px);
+      box-shadow: 0 8px 24px rgba(232,93,4,0.4);
+    }
   </style>
 </head>
 <body>
@@ -2219,7 +2311,7 @@
   <div class="je-welcome" aria-hidden="true">
     <div class="je-welcome-inner">
       <div class="je-welcome-logo">
-        <img src="./grupo_joper_logo.png" alt="Grupo Joper" />
+        <img loading="lazy" src="./grupo_joper_logo.png" alt="Grupo Joper" />
       </div>
       <div class="je-welcome-sep"></div>
       <span class="je-welcome-text">Bienvenido — ¿Qué estás buscando hoy?</span>
@@ -2245,7 +2337,7 @@
         </div>
       </div>
       <p class="je-descriptor">Maquinaria para construcción</p>
-      <p class="je-hint">Revolvedoras, compactadoras, generadores, torres de iluminación y más equipo para tu obra</p>
+      <p class="je-hint">Revolvedoras, compactadoras, cortadoras, torres de iluminación, montacargas y más equipo para tu obra</p>
       <div class="je-tags" aria-label="Líneas de producto">
         <span>Revolvedoras</span>
         <span>Compactación</span>
@@ -2344,7 +2436,7 @@
         <li><a href="#contacto">Contacto</a></li>
       </ul>
       <div class="nav-cta">
-        <a href="https://wa.me/528711512993?text=Hola%2C%20me%20interesa%20conocer%20sus%20productos%20Joper" class="btn btn-whatsapp" aria-label="Contactar por WhatsApp" target="_blank" rel="noopener">
+        <a href="https://wa.me/528711512993?text=Hola%2C%20me%20interesa%20conocer%20sus%20productos%20Joper" class="btn btn-whatsapp" aria-label="Contactar por WhatsApp" target="_blank" rel="noopener noreferrer">
           <svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
           WhatsApp
         </a>
@@ -2366,7 +2458,7 @@
   <a href="#distribuidores" class="mobile-link">Distribuidores</a>
   <a href="#universidad" class="mobile-link">Universidad Joper</a>
   <a href="#contacto" class="mobile-link">Contacto</a>
-  <a href="https://wa.me/528711512993" class="btn btn-whatsapp" style="margin-top:16px" target="_blank" rel="noopener">WhatsApp</a>
+  <a href="https://wa.me/528711512993" class="btn btn-whatsapp" style="margin-top:16px" target="_blank" rel="noopener noreferrer">WhatsApp</a>
 </div>
 
 <!-- ===== HERO ===== -->
@@ -2408,7 +2500,7 @@
               <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path d="M19 11H7.83l4.88-4.88c.39-.39.39-1.03 0-1.42-.39-.39-1.02-.39-1.41 0l-6.59 6.59c-.39.39-.39 1.02 0 1.41l6.59 6.59c.39.39 1.02.39 1.41 0 .39-.39.39-1.02 0-1.41L7.83 13H19c.55 0 1-.45 1-1s-.45-1-1-1z" transform="rotate(180 12 12)"/></svg>
               Ver Catálogo
             </a>
-            <a href="https://wa.me/528711512993?text=Hola%2C%20quiero%20m%C3%A1s%20informaci%C3%B3n%20sobre%20maquinaria%20Joper" class="btn btn-whatsapp" target="_blank" rel="noopener" aria-label="Contactar por WhatsApp">
+            <a href="https://wa.me/528711512993?text=Hola%2C%20quiero%20m%C3%A1s%20informaci%C3%B3n%20sobre%20maquinaria%20Joper" class="btn btn-whatsapp" target="_blank" rel="noopener noreferrer" aria-label="Contactar por WhatsApp">
               <svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
               Contáctanos por WhatsApp
             </a>
@@ -2446,7 +2538,7 @@
   <div class="container">
     <div class="products-header fade-in">
       <div class="section-logo-wrap">
-        <img src="./joper_ligero_logo.webp" alt="Joper Ligero" height="52"
+        <img loading="lazy" src="./joper_ligero_logo.webp" alt="Joper Ligero" height="52"
           onerror="this.style.display='none'; this.nextElementSibling.style.display='inline-block';" />
         <span style="display:none; font-family:'Montserrat',sans-serif; font-weight:900; font-size:1.1rem; color:#E85D04; letter-spacing:0.1em; text-transform:uppercase; border:2px solid #E85D04; padding:6px 18px; border-radius:6px;">JOPER LIGERO</span>
       </div>
@@ -2473,7 +2565,7 @@
           <p class="product-desc">Mezcladoras de concreto de alto rendimiento. Chasis reforzado en "V", cremallera de una sola pieza, multi-posicionamiento de descarga. Producción: 5 m³/hr con ciclo de 3 min.</p>
           <p class="product-models">ULTRAMAX100 · R100TB · R100STLX · R200STLX · POLYMAX · MAXMIX CM150</p>
         </div>
-        <a href="#contacto" class="product-cta" aria-label="Ver productos Revolvedoras">
+        <a href="https://wa.me/528711512993?text=Hola%2C%20me%20interesa%20informaci%C3%B3n%20sobre%20Revolvedoras%20Joper" target="_blank" rel="noopener noreferrer" class="product-cta" aria-label="Ver productos Revolvedoras">
           Ver productos
           <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
         </a>
@@ -2488,7 +2580,7 @@
           <p class="product-desc">Apisonadoras y placas compactadoras para todo tipo de suelo. JAGUAR MT75J: 600–650 golpes/min, fuerza 18 kN. Placas hasta 660 m²/hr de eficiencia. Rodillo vibratorio RV-4 de 100 kg.</p>
           <p class="product-models">JAGUAR MT75J · AP800 · MS60K6.5 · MS90K6.5 · Rodillo RV-4</p>
         </div>
-        <a href="#contacto" class="product-cta" aria-label="Ver productos Compactación">
+        <a href="https://wa.me/528711512993?text=Hola%2C%20me%20interesa%20informaci%C3%B3n%20sobre%20Compactaci%C3%B3n%20Joper" target="_blank" rel="noopener noreferrer" class="product-cta" aria-label="Ver productos Compactación">
           Ver productos
           <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
         </a>
@@ -2503,7 +2595,7 @@
           <p class="product-desc">Allanadoras y unireglas para acabados de pisos de concreto. AL-40 (40" diámetro, 50–100 RPM), AL-46 (117 cm diámetro, 5 aspas), Escarificadora E-800 para eliminación de líneas de tráfico.</p>
           <p class="product-models">AL-40 · AL-46 · Uniregla · Escarificadora E-800</p>
         </div>
-        <a href="#contacto" class="product-cta" aria-label="Ver productos Superficie">
+        <a href="https://wa.me/528711512993?text=Hola%2C%20me%20interesa%20informaci%C3%B3n%20sobre%20Superficie%20Joper" target="_blank" rel="noopener noreferrer" class="product-cta" aria-label="Ver productos Superficie">
           Ver productos
           <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
         </a>
@@ -2518,7 +2610,7 @@
           <p class="product-desc">Cortadoras de concreto y asfalto con disco hasta 18". Guía de precisión, freno manual, sistema de enfriamiento y tanque de agua incluido. Sierra BBS para block y ladrillo hasta 8" de profundidad.</p>
           <p class="product-models">Mod. KL · Super · Super Plus · CA13 · Sierra BBS eléctrica/gasolina</p>
         </div>
-        <a href="#contacto" class="product-cta" aria-label="Ver productos Cortadoras">
+        <a href="https://wa.me/528711512993?text=Hola%2C%20me%20interesa%20informaci%C3%B3n%20sobre%20Cortadoras%20Joper" target="_blank" rel="noopener noreferrer" class="product-cta" aria-label="Ver productos Cortadoras">
           Ver productos
           <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
         </a>
@@ -2533,7 +2625,7 @@
           <p class="product-desc">Malacate JP-1000: 1,000 kg de capacidad, 22–32 mts/min, cable de 13 mm (1/2"). Pluma giratoria con radio de 1.5 mts. Motor gasolina o eléctrico. Vogue, triángulo y polea patesca disponibles.</p>
           <p class="product-models">Malacate JP-1000 · Pluma Giratoria JP-1000 · Vogue 160 Lts.</p>
         </div>
-        <a href="#contacto" class="product-cta" aria-label="Ver productos Elevación">
+        <a href="https://wa.me/528711512993?text=Hola%2C%20me%20interesa%20informaci%C3%B3n%20sobre%20Elevaci%C3%B3n%20y%20Malacates%20Joper" target="_blank" rel="noopener noreferrer" class="product-cta" aria-label="Ver productos Elevación">
           Ver productos
           <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
         </a>
@@ -2548,7 +2640,7 @@
           <p class="product-desc">Vibradores para consolidación homogénea del concreto. V3EM eléctrico: motor 3 HP, 110V, fuerza centrífuga 3,000 N, manguera 4 mts. Pendular V-4P/V-6P a gasolina con chicotes de 6 mts.</p>
           <p class="product-models">Vibrador V3EM eléctrico · Pendular V-4P · Pendular V-6P</p>
         </div>
-        <a href="#contacto" class="product-cta" aria-label="Ver productos Vibración">
+        <a href="https://wa.me/528711512993?text=Hola%2C%20me%20interesa%20informaci%C3%B3n%20sobre%20Vibraci%C3%B3n%20Joper" target="_blank" rel="noopener noreferrer" class="product-cta" aria-label="Ver productos Vibración">
           Ver productos
           <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
         </a>
@@ -2563,7 +2655,7 @@
           <p class="product-desc">Compresor de aire JP185S: doble tornillo, 185 CFM, motor Isuzu 4JB1-C, consumo 9 L/h, tanque 80 L. Generadores eléctricos para obra en campo, múltiples potencias disponibles.</p>
           <p class="product-models">Compresor JP185S 185 CFM · Generadores para obra</p>
         </div>
-        <a href="#contacto" class="product-cta" aria-label="Ver productos Generadores">
+        <a href="https://wa.me/528711512993?text=Hola%2C%20me%20interesa%20informaci%C3%B3n%20sobre%20Generadores%20y%20Compresores%20Joper" target="_blank" rel="noopener noreferrer" class="product-cta" aria-label="Ver productos Generadores">
           Ver productos
           <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
         </a>
@@ -2578,7 +2670,7 @@
           <p class="product-desc">Torre LD7KW LED: hasta 8.5 metros de alto plegable, giro 360°, 4 lámparas LED de 320 W, área iluminada 5,000 m². Motor Kohler Lombardini diesel. Salidas auxiliares 3 kVA. Peso 706 kg.</p>
           <p class="product-models">LD7KW LED · Modelos con y sin generador auxiliar</p>
         </div>
-        <a href="#contacto" class="product-cta" aria-label="Ver productos Torres de Iluminación">
+        <a href="https://wa.me/528711512993?text=Hola%2C%20me%20interesa%20informaci%C3%B3n%20sobre%20Torres%20de%20Iluminaci%C3%B3n%20Joper" target="_blank" rel="noopener noreferrer" class="product-cta" aria-label="Ver productos Torres de Iluminación">
           Ver productos
           <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
         </a>
@@ -2590,12 +2682,19 @@
         <div class="product-icon" aria-hidden="true">🏭</div>
         <div>
           <h3 class="product-name">Montacargas</h3>
-          <p class="product-desc">Línea completa 3 a 5 Ton. JP30 (Nissan K25, GLP/Gasolina), JP30D (Isuzu C240 Diesel), CPQY50 (Kubota 5 Ton) y CPCD50 (Isuzu 5 Ton Diesel). Triple mástil 4.8 m, desplazador lateral, llanta semisólida.</p>
+          <p class="product-desc">Línea completa de 3 a 5 Ton. adaptada para suelos y condiciones nacionales. JP30 (Nissan K25, GLP/Gasolina), JP30D (Isuzu C240 Diesel), CPQY50 (Kubota 5 Ton) y CPCD50 (Isuzu 5 Ton Diesel). Triple mástil 4.8 m, desplazador lateral, llanta semisólida. Motocarga M300: 800 kg, 5 velocidades + reversa.</p>
           <p class="product-models">JP30 · JP30D · CPQY50 · CPCD50 · Motocarga M300</p>
         </div>
-        <a href="#contacto" class="product-cta" aria-label="Ver productos Montacargas">
+        <a href="https://wa.me/528711512993?text=Hola%2C%20me%20interesa%20informaci%C3%B3n%20sobre%20Montacargas%20Joper"
+           class="product-cta"
+           target="_blank"
+           rel="noopener noreferrer"
+           aria-label="Solicitar información sobre Montacargas Joper">
           Ver productos
-          <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          <svg width="16" height="16" fill="none" stroke="currentColor"
+               stroke-width="2.5" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M5 12h14M12 5l7 7-7 7"/>
+          </svg>
         </a>
       </article>
 
@@ -2608,7 +2707,7 @@
           <p class="product-desc">Flotas y llanas de magnesio, llanas ranuradas, comales, texturizadores, dispersadores de concreto y tubos de extensión. Motores Kohler, Robin, Honda, Briggs &amp; Stratton disponibles.</p>
           <p class="product-models">Flotas CC802/CC803 · Llanas CC790/CC787 · Comales SK401–SK407</p>
         </div>
-        <a href="#contacto" class="product-cta" aria-label="Ver productos Kraft Tool">
+        <a href="https://wa.me/528711512993?text=Hola%2C%20me%20interesa%20informaci%C3%B3n%20sobre%20Herramientas%20Kraft%20Tool%20Joper" target="_blank" rel="noopener noreferrer" class="product-cta" aria-label="Ver productos Kraft Tool">
           Ver productos
           <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
         </a>
@@ -2688,7 +2787,7 @@
           </li>
         </ul>
         <div style="display:flex;gap:12px;flex-wrap:wrap;">
-          <a href="https://wa.me/528711512993?text=Hola%2C%20quiero%20informaci%C3%B3n%20sobre%20la%20ULTRAMAX100" class="btn btn-primary" target="_blank" rel="noopener" aria-label="Solicitar cotización ULTRAMAX100 por WhatsApp">
+          <a href="https://wa.me/528711512993?text=Hola%2C%20quiero%20informaci%C3%B3n%20sobre%20la%20ULTRAMAX100" class="btn btn-primary" target="_blank" rel="noopener noreferrer" aria-label="Solicitar cotización ULTRAMAX100 por WhatsApp">
             Solicitar Cotización
           </a>
           <a href="#contacto" class="btn btn-outline" style="border-color:rgba(255,255,255,0.3);color:rgba(255,255,255,0.8);" aria-label="Ver ficha técnica ULTRAMAX100">
@@ -2708,7 +2807,7 @@
     <!-- MOVIL HEADER -->
     <div class="movil-header-block fade-in">
       <div class="movil-logo-wrap">
-        <img src="./joper_movil_logo.png" alt="Joper Móvil" height="60"
+        <img loading="lazy" src="./joper_movil_logo.png" alt="Joper Móvil" height="60"
           onerror="this.style.display='none';
                    this.nextElementSibling.style.display='inline-block';" />
         <span style="display:none; font-family:'Montserrat',sans-serif; font-weight:900;
@@ -2753,14 +2852,14 @@
       <div class="movil-product-detail">
         <div class="movil-product-images">
           <div class="movil-img-main">
-            <img src="./img/movil/volteo-pegaso.jpg" alt="Volteo Línea Pegaso"
+            <img loading="lazy" src="./img/movil/volteo-pegaso.jpg" alt="Volteo Línea Pegaso"
               onerror="this.style.display='none';" />
             <div class="movil-img-placeholder" aria-hidden="true">🚛<br/><span>Volteo — Línea Pegaso</span></div>
           </div>
           <div class="movil-img-thumbs">
-            <div class="movil-img-thumb"><img src="./img/movil/volteo-azul.jpg" alt="Volteo azul" onerror="this.parentElement.classList.add('no-img');this.style.display='none';"/></div>
-            <div class="movil-img-thumb"><img src="./img/movil/volteo-rojo.jpg" alt="Volteo rojo" onerror="this.parentElement.classList.add('no-img');this.style.display='none';"/></div>
-            <div class="movil-img-thumb"><img src="./img/movil/volteo-flota.jpg" alt="Flota de volteos" onerror="this.parentElement.classList.add('no-img');this.style.display='none';"/></div>
+            <div class="movil-img-thumb"><img loading="lazy" src="./img/movil/volteo-azul.jpg" alt="Volteo azul" onerror="this.parentElement.classList.add('no-img');this.style.display='none';"/></div>
+            <div class="movil-img-thumb"><img loading="lazy" src="./img/movil/volteo-rojo.jpg" alt="Volteo rojo" onerror="this.parentElement.classList.add('no-img');this.style.display='none';"/></div>
+            <div class="movil-img-thumb"><img loading="lazy" src="./img/movil/volteo-flota.jpg" alt="Flota de volteos" onerror="this.parentElement.classList.add('no-img');this.style.display='none';"/></div>
           </div>
         </div>
         <div class="movil-product-info">
@@ -2776,7 +2875,7 @@
           <a href="https://wa.me/528711795810?text=Hola%2C%20me%20gustar%C3%ADa%20saber%20informaci%C3%B3n%20espec%C3%ADfica%20sobre%20grupo%20Joper."
            class="btn movil-btn"
            target="_blank"
-           rel="noopener"
+           rel="noopener noreferrer"
            aria-label="Contactar Joper Móvil por WhatsApp">
           <svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
           Solicitar información por WhatsApp
@@ -2790,13 +2889,13 @@
       <div class="movil-product-detail">
         <div class="movil-product-images">
           <div class="movil-img-main">
-            <img src="./img/movil/gondola-full.jpg" alt="Full de Góndolas" onerror="this.style.display='none';"/>
+            <img loading="lazy" src="./img/movil/gondola-full.jpg" alt="Full de Góndolas" onerror="this.style.display='none';"/>
             <div class="movil-img-placeholder" aria-hidden="true">🏗️<br/><span>Full de Góndolas — 80 Ton.</span></div>
           </div>
           <div class="movil-img-thumbs">
-            <div class="movil-img-thumb"><img src="./img/movil/gondola-hardox.jpg" alt="Góndola HARDOX" onerror="this.parentElement.classList.add('no-img');this.style.display='none';"/></div>
-            <div class="movil-img-thumb"><img src="./img/movil/gondola-aluminio.jpg" alt="Góndola Aluminio" onerror="this.parentElement.classList.add('no-img');this.style.display='none';"/></div>
-            <div class="movil-img-thumb"><img src="./img/movil/gondola-strenx.jpg" alt="Góndola STRENX" onerror="this.parentElement.classList.add('no-img');this.style.display='none';"/></div>
+            <div class="movil-img-thumb"><img loading="lazy" src="./img/movil/gondola-hardox.jpg" alt="Góndola HARDOX" onerror="this.parentElement.classList.add('no-img');this.style.display='none';"/></div>
+            <div class="movil-img-thumb"><img loading="lazy" src="./img/movil/gondola-aluminio.jpg" alt="Góndola Aluminio" onerror="this.parentElement.classList.add('no-img');this.style.display='none';"/></div>
+            <div class="movil-img-thumb"><img loading="lazy" src="./img/movil/gondola-strenx.jpg" alt="Góndola STRENX" onerror="this.parentElement.classList.add('no-img');this.style.display='none';"/></div>
           </div>
         </div>
         <div class="movil-product-info">
@@ -2812,7 +2911,7 @@
           <a href="https://wa.me/528711795810?text=Hola%2C%20me%20gustar%C3%ADa%20saber%20informaci%C3%B3n%20espec%C3%ADfica%20sobre%20grupo%20Joper."
            class="btn movil-btn"
            target="_blank"
-           rel="noopener"
+           rel="noopener noreferrer"
            aria-label="Contactar Joper Móvil por WhatsApp">
           <svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
           Solicitar información por WhatsApp
@@ -2826,13 +2925,13 @@
       <div class="movil-product-detail">
         <div class="movil-product-images">
           <div class="movil-img-main">
-            <img src="./img/movil/tolva-cementera.jpg" alt="Tolva Cementera" onerror="this.style.display='none';"/>
+            <img loading="lazy" src="./img/movil/tolva-cementera.jpg" alt="Tolva Cementera" onerror="this.style.display='none';"/>
             <div class="movil-img-placeholder" aria-hidden="true">🏭<br/><span>Tolva Cementera / Presurizada</span></div>
           </div>
           <div class="movil-img-thumbs">
-            <div class="movil-img-thumb"><img src="./img/movil/tolva-domos.jpg" alt="Domos BETTS" onerror="this.parentElement.classList.add('no-img');this.style.display='none';"/></div>
-            <div class="movil-img-thumb"><img src="./img/movil/tolva-valvulas.jpg" alt="Válvulas BTI" onerror="this.parentElement.classList.add('no-img');this.style.display='none';"/></div>
-            <div class="movil-img-thumb"><img src="./img/movil/tolva-escalera.jpg" alt="Escalera tolva" onerror="this.parentElement.classList.add('no-img');this.style.display='none';"/></div>
+            <div class="movil-img-thumb"><img loading="lazy" src="./img/movil/tolva-domos.jpg" alt="Domos BETTS" onerror="this.parentElement.classList.add('no-img');this.style.display='none';"/></div>
+            <div class="movil-img-thumb"><img loading="lazy" src="./img/movil/tolva-valvulas.jpg" alt="Válvulas BTI" onerror="this.parentElement.classList.add('no-img');this.style.display='none';"/></div>
+            <div class="movil-img-thumb"><img loading="lazy" src="./img/movil/tolva-escalera.jpg" alt="Escalera tolva" onerror="this.parentElement.classList.add('no-img');this.style.display='none';"/></div>
           </div>
         </div>
         <div class="movil-product-info">
@@ -2848,7 +2947,7 @@
           <a href="https://wa.me/528711795810?text=Hola%2C%20me%20gustar%C3%ADa%20saber%20informaci%C3%B3n%20espec%C3%ADfica%20sobre%20grupo%20Joper."
            class="btn movil-btn"
            target="_blank"
-           rel="noopener"
+           rel="noopener noreferrer"
            aria-label="Contactar Joper Móvil por WhatsApp">
           <svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
           Solicitar información por WhatsApp
@@ -2862,13 +2961,13 @@
       <div class="movil-product-detail">
         <div class="movil-product-images">
           <div class="movil-img-main">
-            <img src="./img/movil/plataforma-multimodal.jpg" alt="Plataforma Multi-Modal" onerror="this.style.display='none';"/>
+            <img loading="lazy" src="./img/movil/plataforma-multimodal.jpg" alt="Plataforma Multi-Modal" onerror="this.style.display='none';"/>
             <div class="movil-img-placeholder" aria-hidden="true">📦<br/><span>Línea Hércules — Plataformas</span></div>
           </div>
           <div class="movil-img-thumbs">
-            <div class="movil-img-thumb"><img src="./img/movil/portacontenedor.jpg" alt="Portacontenedor" onerror="this.parentElement.classList.add('no-img');this.style.display='none';"/></div>
-            <div class="movil-img-thumb"><img src="./img/movil/plataforma-encortinada.jpg" alt="Plataforma encortinada" onerror="this.parentElement.classList.add('no-img');this.style.display='none';"/></div>
-            <div class="movil-img-thumb"><img src="./img/movil/plataforma-hyva.jpg" alt="Plataforma HYVA" onerror="this.parentElement.classList.add('no-img');this.style.display='none';"/></div>
+            <div class="movil-img-thumb"><img loading="lazy" src="./img/movil/portacontenedor.jpg" alt="Portacontenedor" onerror="this.parentElement.classList.add('no-img');this.style.display='none';"/></div>
+            <div class="movil-img-thumb"><img loading="lazy" src="./img/movil/plataforma-encortinada.jpg" alt="Plataforma encortinada" onerror="this.parentElement.classList.add('no-img');this.style.display='none';"/></div>
+            <div class="movil-img-thumb"><img loading="lazy" src="./img/movil/plataforma-hyva.jpg" alt="Plataforma HYVA" onerror="this.parentElement.classList.add('no-img');this.style.display='none';"/></div>
           </div>
         </div>
         <div class="movil-product-info">
@@ -2895,7 +2994,7 @@
           <a href="https://wa.me/528711795810?text=Hola%2C%20me%20gustar%C3%ADa%20saber%20informaci%C3%B3n%20espec%C3%ADfica%20sobre%20grupo%20Joper."
            class="btn movil-btn"
            target="_blank"
-           rel="noopener"
+           rel="noopener noreferrer"
            aria-label="Contactar Joper Móvil por WhatsApp">
           <svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
           Solicitar información por WhatsApp
@@ -2909,13 +3008,13 @@
       <div class="movil-product-detail">
         <div class="movil-product-images">
           <div class="movil-img-main">
-            <img src="./img/movil/pipa-diesel.jpg" alt="Pipa de Diesel" onerror="this.style.display='none';"/>
+            <img loading="lazy" src="./img/movil/pipa-diesel.jpg" alt="Pipa de Diesel" onerror="this.style.display='none';"/>
             <div class="movil-img-placeholder" aria-hidden="true">⛽<br/><span>Pipas y Tanques</span></div>
           </div>
           <div class="movil-img-thumbs">
-            <div class="movil-img-thumb"><img src="./img/movil/tanque-refinado.jpg" alt="Tanque de refinado" onerror="this.parentElement.classList.add('no-img');this.style.display='none';"/></div>
-            <div class="movil-img-thumb"><img src="./img/movil/pipa-riego.jpg" alt="Pipa de riego" onerror="this.parentElement.classList.add('no-img');this.style.display='none';"/></div>
-            <div class="movil-img-thumb"><img src="./img/movil/riego-aspersores.jpg" alt="Sistema Klein" onerror="this.parentElement.classList.add('no-img');this.style.display='none';"/></div>
+            <div class="movil-img-thumb"><img loading="lazy" src="./img/movil/tanque-refinado.jpg" alt="Tanque de refinado" onerror="this.parentElement.classList.add('no-img');this.style.display='none';"/></div>
+            <div class="movil-img-thumb"><img loading="lazy" src="./img/movil/pipa-riego.jpg" alt="Pipa de riego" onerror="this.parentElement.classList.add('no-img');this.style.display='none';"/></div>
+            <div class="movil-img-thumb"><img loading="lazy" src="./img/movil/riego-aspersores.jpg" alt="Sistema Klein" onerror="this.parentElement.classList.add('no-img');this.style.display='none';"/></div>
           </div>
         </div>
         <div class="movil-product-info">
@@ -2938,7 +3037,7 @@
           <a href="https://wa.me/528711795810?text=Hola%2C%20me%20gustar%C3%ADa%20saber%20informaci%C3%B3n%20espec%C3%ADfica%20sobre%20grupo%20Joper."
            class="btn movil-btn"
            target="_blank"
-           rel="noopener"
+           rel="noopener noreferrer"
            aria-label="Contactar Joper Móvil por WhatsApp">
           <svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
           Solicitar información por WhatsApp
@@ -2952,12 +3051,12 @@
       <div class="movil-product-detail">
         <div class="movil-product-images">
           <div class="movil-img-main">
-            <img src="./img/movil/granelera.jpg" alt="Granelera" onerror="this.style.display='none';"/>
+            <img loading="lazy" src="./img/movil/granelera.jpg" alt="Granelera" onerror="this.style.display='none';"/>
             <div class="movil-img-placeholder" aria-hidden="true">🌾<br/><span>Graneleras y Silos</span></div>
           </div>
           <div class="movil-img-thumbs">
-            <div class="movil-img-thumb"><img src="./img/movil/granelera-abierta.jpg" alt="Granelera abierta" onerror="this.parentElement.classList.add('no-img');this.style.display='none';"/></div>
-            <div class="movil-img-thumb"><img src="./img/movil/silo-horizontal.jpg" alt="Silo Horizontal" onerror="this.parentElement.classList.add('no-img');this.style.display='none';"/></div>
+            <div class="movil-img-thumb"><img loading="lazy" src="./img/movil/granelera-abierta.jpg" alt="Granelera abierta" onerror="this.parentElement.classList.add('no-img');this.style.display='none';"/></div>
+            <div class="movil-img-thumb"><img loading="lazy" src="./img/movil/silo-horizontal.jpg" alt="Silo Horizontal" onerror="this.parentElement.classList.add('no-img');this.style.display='none';"/></div>
             <div class="movil-img-thumb no-img"></div>
           </div>
         </div>
@@ -2981,7 +3080,7 @@
           <a href="https://wa.me/528711795810?text=Hola%2C%20me%20gustar%C3%ADa%20saber%20informaci%C3%B3n%20espec%C3%ADfica%20sobre%20grupo%20Joper."
            class="btn movil-btn"
            target="_blank"
-           rel="noopener"
+           rel="noopener noreferrer"
            aria-label="Contactar Joper Móvil por WhatsApp">
           <svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
           Solicitar información por WhatsApp
@@ -2995,13 +3094,13 @@
       <div class="movil-product-detail">
         <div class="movil-product-images">
           <div class="movil-img-main">
-            <img src="./img/movil/lube-truck.jpg" alt="Lube Truck" onerror="this.style.display='none';"/>
+            <img loading="lazy" src="./img/movil/lube-truck.jpg" alt="Lube Truck" onerror="this.style.display='none';"/>
             <div class="movil-img-placeholder" aria-hidden="true">🔧<br/><span>Lube Truck — Servicio de Campo</span></div>
           </div>
           <div class="movil-img-thumbs">
-            <div class="movil-img-thumb"><img src="./img/movil/lube-truck-2.jpg" alt="Lube Truck 2" onerror="this.parentElement.classList.add('no-img');this.style.display='none';"/></div>
-            <div class="movil-img-thumb"><img src="./img/movil/grua-rescate.jpg" alt="Grúa de Rescate" onerror="this.parentElement.classList.add('no-img');this.style.display='none';"/></div>
-            <div class="movil-img-thumb"><img src="./img/movil/enlonado-cramaro.jpg" alt="Sistema Enlonado" onerror="this.parentElement.classList.add('no-img');this.style.display='none';"/></div>
+            <div class="movil-img-thumb"><img loading="lazy" src="./img/movil/lube-truck-2.jpg" alt="Lube Truck 2" onerror="this.parentElement.classList.add('no-img');this.style.display='none';"/></div>
+            <div class="movil-img-thumb"><img loading="lazy" src="./img/movil/grua-rescate.jpg" alt="Grúa de Rescate" onerror="this.parentElement.classList.add('no-img');this.style.display='none';"/></div>
+            <div class="movil-img-thumb"><img loading="lazy" src="./img/movil/enlonado-cramaro.jpg" alt="Sistema Enlonado" onerror="this.parentElement.classList.add('no-img');this.style.display='none';"/></div>
           </div>
         </div>
         <div class="movil-product-info">
@@ -3024,7 +3123,7 @@
           <a href="https://wa.me/528711795810?text=Hola%2C%20me%20gustar%C3%ADa%20saber%20informaci%C3%B3n%20espec%C3%ADfica%20sobre%20grupo%20Joper."
            class="btn movil-btn"
            target="_blank"
-           rel="noopener"
+           rel="noopener noreferrer"
            aria-label="Contactar Joper Móvil por WhatsApp">
           <svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
           Solicitar información por WhatsApp
@@ -3042,7 +3141,7 @@
         <a href="https://wa.me/528711795810?text=Hola%2C%20me%20gustar%C3%ADa%20saber%20informaci%C3%B3n%20espec%C3%ADfica%20sobre%20grupo%20Joper."
            class="btn btn-whatsapp"
            target="_blank"
-           rel="noopener"
+           rel="noopener noreferrer"
            aria-label="WhatsApp Joper Móvil">
           <svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
           WhatsApp Joper Móvil
@@ -3050,7 +3149,7 @@
         <a href="https://wa.me/528711795810?text=Hola%2C%20me%20gustar%C3%ADa%20saber%20informaci%C3%B3n%20espec%C3%ADfica%20sobre%20grupo%20Joper."
            class="btn movil-btn"
            target="_blank"
-           rel="noopener"
+           rel="noopener noreferrer"
            aria-label="Contactar Joper Móvil por WhatsApp">
           <svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
           Solicitar información por WhatsApp
@@ -3264,7 +3363,7 @@
       <h3>¿Quieres ser distribuidor Joper?</h3>
       <p>Únete a nuestra red de distribuidores en América. Ofrecemos soporte técnico, capacitación y respaldo de una marca con más de 65 años de trayectoria.</p>
       <div style="display:flex;gap:12px;flex-wrap:wrap;justify-content:center;">
-        <a href="https://wa.me/528711512993?text=Hola%2C%20me%20interesa%20ser%20distribuidor%20de%20Joper%20en%20mi%20pa%C3%ADs" class="btn btn-whatsapp" target="_blank" rel="noopener" aria-label="Contactar para ser distribuidor Joper">
+        <a href="https://wa.me/528711512993?text=Hola%2C%20me%20interesa%20ser%20distribuidor%20de%20Joper%20en%20mi%20pa%C3%ADs" class="btn btn-whatsapp" target="_blank" rel="noopener noreferrer" aria-label="Contactar para ser distribuidor Joper">
           <svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
           Quiero ser distribuidor
         </a>
@@ -3318,8 +3417,9 @@
         <div class="univ-grid">
 
           <!-- ✅ DESCARGA REAL: Revolvedoras -->
-          <a href="./manual-revolvedoras.pdf" download="Manual-Revolvedoras-Joper.pdf"
-             class="univ-manual-card" aria-label="Descargar manual de Revolvedoras Joper">
+          <a href="https://wa.me/528711512993?text=Hola%20Joper%2C%20me%20interesa%20el%20manual%20de%20Revolvedoras"
+             target="_blank" rel="noopener noreferrer"
+             class="univ-manual-card" aria-label="Solicitar manual de Revolvedoras Joper por WhatsApp">
             <div class="univ-manual-icon" aria-hidden="true">📋</div>
             <div class="univ-manual-info">
               <span class="univ-manual-title">Revolvedoras Joper</span>
@@ -3333,8 +3433,9 @@
           </a>
 
           <!-- ✅ DESCARGA REAL: Cortadoras -->
-          <a href="./manual-cortadoras.pdf" download="Manual-Cortadoras-Joper.pdf"
-             class="univ-manual-card" aria-label="Descargar manual de Cortadoras de Concreto Joper">
+          <a href="https://wa.me/528711512993?text=Hola%20Joper%2C%20me%20interesa%20el%20manual%20de%20Cortadoras"
+             target="_blank" rel="noopener noreferrer"
+             class="univ-manual-card" aria-label="Solicitar manual de Cortadoras Joper por WhatsApp">
             <div class="univ-manual-icon" aria-hidden="true">📋</div>
             <div class="univ-manual-info">
               <span class="univ-manual-title">Cortadoras de Concreto</span>
@@ -3371,7 +3472,7 @@
 
           <!-- 📩 SOLICITAR: Torre LD6KW -->
           <a href="https://wa.me/528711512993?text=Hola%20Joper%2C%20me%20interesa%20el%20manual%20de%20la%20Torre%20de%20Iluminaci%C3%B3n%20LD6KW"
-             target="_blank" rel="noopener"
+             target="_blank" rel="noopener noreferrer"
              class="univ-manual-card univ-manual-request" aria-label="Solicitar manual Torre de Iluminación LD6KW por WhatsApp">
             <div class="univ-manual-icon" aria-hidden="true">📋</div>
             <div class="univ-manual-info">
@@ -3387,7 +3488,7 @@
 
           <!-- 📩 SOLICITAR: Generadores -->
           <a href="https://wa.me/528711512993?text=Hola%20Joper%2C%20me%20interesa%20el%20manual%20de%20Generadores"
-             target="_blank" rel="noopener"
+             target="_blank" rel="noopener noreferrer"
              class="univ-manual-card univ-manual-request" aria-label="Solicitar manual de Generadores por WhatsApp">
             <div class="univ-manual-icon" aria-hidden="true">📋</div>
             <div class="univ-manual-info">
@@ -3403,7 +3504,7 @@
 
           <!-- 📩 SOLICITAR: Allanadora -->
           <a href="https://wa.me/528711512993?text=Hola%20Joper%2C%20me%20interesa%20el%20manual%20de%20la%20Allanadora%20AL-40"
-             target="_blank" rel="noopener"
+             target="_blank" rel="noopener noreferrer"
              class="univ-manual-card univ-manual-request" aria-label="Solicitar manual Allanadora AL-40 por WhatsApp">
             <div class="univ-manual-icon" aria-hidden="true">📋</div>
             <div class="univ-manual-info">
@@ -3429,13 +3530,37 @@
            aria-label="Videos y cursos en YouTube">
         <div class="univ-videos-grid">
 
-          <!-- ✅ VIDEO REAL: Manual Bailarinas 75J -->
+          <!-- Video manual: Bailarinas 75J (placeholder until files are uploaded) -->
           <div class="univ-video-card">
-            <div class="univ-video-local" aria-label="Video manual: Apisonadora Bailarina JAGUAR 75J">
-              <video controls preload="metadata" style="width:100%;display:block;background:#000;aspect-ratio:16/9;">
-                <source src="./manual-bailarinas-75j.mp4" type="video/mp4" />
-                Tu navegador no soporta video. <a href="./manual-bailarinas-75j.mp4">Descargar video</a>.
-              </video>
+            <div class="univ-video-local">
+              <div style="position:relative; width:100%; aspect-ratio:16/9;
+                          background:#1A1A2E; border-radius:12px; overflow:hidden;
+                          display:flex; align-items:center; justify-content:center;
+                          border:1px solid rgba(255,255,255,0.08);">
+                <div style="text-align:center; color:rgba(255,255,255,0.6); padding:24px;">
+                  <svg width="56" height="56" fill="none" viewBox="0 0 24 24"
+                       style="margin:0 auto 14px; display:block;" aria-hidden="true">
+                    <circle cx="12" cy="12" r="11" fill="rgba(232,93,4,0.15)"
+                            stroke="#E85D04" stroke-width="1.5"/>
+                    <path d="M10 8l6 4-6 4V8z" fill="#E85D04"/>
+                  </svg>
+                  <p style="font-family:'Montserrat',sans-serif; font-size:0.88rem;
+                            font-weight:600; color:#FFFFFF; margin:0 0 8px;">
+                    Manual — Bailarina / JAGUAR 75J
+                  </p>
+                  <p style="font-size:0.78rem; margin:0 0 16px; color:rgba(255,255,255,0.5);">
+                    Video disponible en el canal oficial de YouTube
+                  </p>
+                  <a href="https://www.youtube.com/@GrupoJoper"
+                     target="_blank" rel="noopener noreferrer"
+                     style="font-family:'Montserrat',sans-serif; font-size:0.82rem;
+                            font-weight:700; color:#E85D04; text-decoration:none;
+                            border:1px solid rgba(232,93,4,0.4); padding:8px 20px;
+                            border-radius:100px; display:inline-block;">
+                    Ver en YouTube →
+                  </a>
+                </div>
+              </div>
             </div>
             <div class="univ-video-info">
               <span class="univ-video-tag">Compactación</span>
@@ -3521,7 +3646,7 @@
           <svg width="22" height="22" fill="#FF0000" viewBox="0 0 24 24" aria-hidden="true">
             <path d="M23.5 6.2a3 3 0 00-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.6A3 3 0 00.5 6.2C0 8.1 0 12 0 12s0 3.9.5 5.8a3 3 0 002.1 2.1c1.9.6 9.4.6 9.4.6s7.5 0 9.4-.6a3 3 0 002.1-2.1C24 15.9 24 12 24 12s0-3.9-.5-5.8zM9.8 15.5V8.5l6.3 3.5-6.3 3.5z"/>
           </svg>
-          <a href="https://www.youtube.com/@GrupoJoper" target="_blank" rel="noopener"
+          <a href="https://www.youtube.com/@GrupoJoper" target="_blank" rel="noopener noreferrer"
              aria-label="Ver canal de YouTube de Grupo Joper">
             Ver todos los videos en el canal de YouTube de Grupo Joper →
           </a>
@@ -3610,7 +3735,7 @@
             <div class="contact-item-icon" aria-hidden="true">📱</div>
             <div class="contact-item-text">
               <strong>WhatsApp</strong>
-              <a href="https://wa.me/528711512993" target="_blank" rel="noopener" aria-label="Enviar WhatsApp a Joper">+52 871 151 2993</a>
+              <a href="https://wa.me/528711512993" target="_blank" rel="noopener noreferrer" aria-label="Enviar WhatsApp a Joper">+52 871 151 2993</a>
             </div>
           </div>
           <div class="contact-item">
@@ -3624,12 +3749,12 @@
             <div class="contact-item-icon" aria-hidden="true">📘</div>
             <div class="contact-item-text">
               <strong>Facebook</strong>
-              <a href="https://facebook.com/GrupoJoper" target="_blank" rel="noopener" aria-label="Facebook Grupo Joper">Grupo Joper</a>
+              <a href="https://facebook.com/GrupoJoper" target="_blank" rel="noopener noreferrer" aria-label="Facebook Grupo Joper">Grupo Joper</a>
             </div>
           </div>
         </div>
         <div style="margin-top:32px;">
-          <a href="https://wa.me/528711512993?text=Hola%2C%20quisiera%20informaci%C3%B3n%20sobre%20sus%20productos" class="btn btn-whatsapp" target="_blank" rel="noopener" style="font-size:1rem;padding:16px 32px;" aria-label="Enviar mensaje de WhatsApp a Joper">
+          <a href="https://wa.me/528711512993?text=Hola%2C%20quisiera%20informaci%C3%B3n%20sobre%20sus%20productos" class="btn btn-whatsapp" target="_blank" rel="noopener noreferrer" style="font-size:1rem;padding:16px 32px;" aria-label="Enviar mensaje de WhatsApp a Joper">
             <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
             Escribir a WhatsApp
           </a>
@@ -3670,6 +3795,7 @@
               <option value="vibracion">Vibración</option>
               <option value="generacion">Generación</option>
               <option value="torres">Torres de Iluminación</option>
+              <option value="montacargas">Montacargas</option>
               <option value="movil">Joper Móvil</option>
               <option value="distribuidor">Quiero ser distribuidor</option>
             </select>
@@ -3694,15 +3820,18 @@
     <div class="footer-grid">
       <div class="footer-brand">
         <a href="#inicio" aria-label="Grupo Joper - Inicio" style="display:inline-block;">
-          <img src="./grupo_joper_logo.png" alt="Grupo Joper" height="48" style="height:48px;width:auto;object-fit:contain;background:rgba(255,255,255,0.9);padding:5px 12px;border-radius:7px;" />
+          <img loading="lazy" src="./grupo_joper_logo.png" alt="Grupo Joper" height="48" style="height:48px;width:auto;object-fit:contain;background:rgba(255,255,255,0.9);padding:5px 12px;border-radius:7px;" />
         </a>
         <p>Fabricantes mexicanos de maquinaria para construcción y transporte desde 1960. Gómez Palacio, Durango, México.</p>
         <div class="footer-social" role="list" aria-label="Redes sociales Grupo Joper">
-          <a href="https://facebook.com/GrupoJoper" class="social-link" target="_blank" rel="noopener" role="listitem" aria-label="Facebook Grupo Joper">
-            <svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+          <a href="https://facebook.com/GrupoJoper" class="social-link" target="_blank" rel="noopener noreferrer" role="listitem" aria-label="Facebook Grupo Joper">
+            <svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg>
           </a>
-          <a href="https://wa.me/528711512993" class="social-link" target="_blank" rel="noopener" role="listitem" aria-label="WhatsApp Grupo Joper">
+          <a href="https://wa.me/528711512993" class="social-link" target="_blank" rel="noopener noreferrer" role="listitem" aria-label="WhatsApp Grupo Joper">
             <svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          </a>
+          <a href="https://www.youtube.com/@GrupoJoper" class="social-link" target="_blank" rel="noopener noreferrer" role="listitem" aria-label="YouTube Grupo Joper">
+            <svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M23.5 6.2a3 3 0 00-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.6A3 3 0 00.5 6.2C0 8.1 0 12 0 12s0 3.9.5 5.8a3 3 0 002.1 2.1c1.9.6 9.4.6 9.4.6s7.5 0 9.4-.6a3 3 0 002.1-2.1C24 15.9 24 12 24 12s0-3.9-.5-5.8zM9.8 15.5V8.5l6.3 3.5-6.3 3.5z"/></svg>
           </a>
         </div>
       </div>
@@ -3713,6 +3842,7 @@
           <li><a href="#productos">Compactación</a></li>
           <li><a href="#productos">Generación</a></li>
           <li><a href="#productos">Torres de Iluminación</a></li>
+          <li><a href="#productos">Montacargas</a></li>
           <li><a href="#movil">Joper Móvil</a></li>
         </ul>
       </div>
@@ -3735,7 +3865,7 @@
       </div>
     </div>
     <div class="footer-bottom">
-      <span>© 2025 Grupo Joper. Todos los derechos reservados.</span>
+      <span>© 2026 Grupo Joper. Todos los derechos reservados.</span>
       <span class="made-in-mx">
         <span aria-label="Bandera de México" role="img">🇲🇽</span> Hecho en México con orgullo
       </span>
@@ -3743,10 +3873,12 @@
   </div>
 </footer>
 
+<button id="scroll-top" aria-label="Volver al inicio de la página" title="Volver al inicio"></button>
+
 <!-- ===== WHATSAPP FLOAT ===== -->
 <div id="wa-float" role="complementary" aria-label="Botón de contacto WhatsApp">
   <div class="wa-tooltip" aria-hidden="true">¡Escríbenos al WhatsApp!</div>
-  <a href="https://wa.me/528711512993?text=Hola%2C%20me%20interesa%20conocer%20sus%20productos%20Joper" class="wa-btn" target="_blank" rel="noopener" aria-label="Contactar Grupo Joper por WhatsApp al +52 871 151 2993">
+  <a href="https://wa.me/528711512993?text=Hola%2C%20me%20interesa%20conocer%20sus%20productos%20Joper" class="wa-btn" target="_blank" rel="noopener noreferrer" aria-label="Contactar Grupo Joper por WhatsApp al +52 871 151 2993">
     <svg width="30" height="30" fill="white" viewBox="0 0 24 24" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
   </a>
 </div>
@@ -3933,6 +4065,40 @@
       thumb.appendChild(iframe);
     });
   });
+
+  /* ── Improvement 2: Scroll to top ── */
+  (function() {
+    var btn = document.getElementById('scroll-top');
+    if (!btn) return;
+    window.addEventListener('scroll', function() {
+      btn.style.display = window.scrollY > 500 ? 'flex' : 'none';
+    }, { passive: true });
+    btn.addEventListener('click', function() {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  }());
+
+  /* ── Improvement 3: Active nav link highlight on scroll ── */
+  (function() {
+    var navLinks = document.querySelectorAll('.nav-links a');
+    var sectionIds = ['inicio','productos','movil','historia',
+                      'distribuidores','universidad','contacto'];
+    var observer = new IntersectionObserver(function(entries) {
+      entries.forEach(function(entry) {
+        if (!entry.isIntersecting) return;
+        navLinks.forEach(function(link) {
+          var isActive = link.getAttribute('href') === '#' + entry.target.id;
+          link.style.color = isActive ? '#E85D04' : '';
+          link.style.background = isActive ? 'rgba(232,93,4,0.08)' : '';
+          link.style.borderRadius = isActive ? '6px' : '';
+        });
+      });
+    }, { threshold: 0.25, rootMargin: '-60px 0px -60px 0px' });
+    sectionIds.forEach(function(id) {
+      var el = document.getElementById(id);
+      if (el) observer.observe(el);
+    });
+  }());
 </script>
 
 
